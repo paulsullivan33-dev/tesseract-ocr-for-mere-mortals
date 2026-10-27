@@ -1,0 +1,46 @@
+=== columns.png --psm 3 (first 6 lines) ===
+Planting Tomatoes
+
+Tomatoes want sun, steady
+water, and patience. Start
+the seeds indoors six weeks
+before the last frost, in
+
+=== columns.png --psm 6 (first 6 lines) ===
+Planting Tomatoes Move the young plants out
+only when the nights stay
+
+Tomatoes want sun, steady mild. Dig a deep hole, set
+
+water, and patience. Start the stem low in the soil,
+
+=== columns.png --psm 4 (first 6 lines) ===
+Planting ‘Tomatoes Move the young plants out
+only when the nights stay
+
+Tomatoes want sun, steady mild. Dig a deep hole, set
+water, and patience. Start the stem low in the soil,
+the seeds indoors six weeks and water well. Roots will
+
+=== one-line.png default vs --psm 7 ===
+psm 3: The meeting starts at seven in the hall.
+psm 7: The meeting starts at seven in the hall.
+=== one-word.png default vs --psm 8 ===
+psm 3: Cleanup
+psm 8: “Clean
+$ tesseract images/notice-upside-down.png stdout --psm 0 (orientation report only)
+Page number: 0
+Orientation in degrees: 180
+Rotate: 180
+Orientation confidence: 19.54
+Script: Latin
+Script confidence: 8.84
+=== upside-down, default psm 3 ===
+truth 518 chars | ocr 510 chars | edits 442 | CER 0.853 | accuracy 14.7%
+=== upside-down, --psm 1 (auto orientation) ===
+truth 518 chars | ocr 518 chars | edits 0 | CER 0.000 | accuracy 100.0%
+
+=== one-word.png with a wide white border added, --psm 8 ===
+psm 8 on the bordered image: "me"  (worse, not better:
+the single-word mode latched onto a fragment both times;
+on this image the plain default read the word correctly)

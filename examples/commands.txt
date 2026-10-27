@@ -1,0 +1,45 @@
+The commands of this guide, collected.
+
+Chapter 3 — prove the install
+    tesseract --version
+    tesseract --list-langs
+
+Chapter 4 — the first read
+    tesseract images/notice-clean.png stdout
+    tesseract images/notice-clean.png results/notice-clean
+    python3 measure.py images/notice-clean.txt results/notice-clean.txt
+
+Chapter 5 — repairs live in fix-images.py; reads after repair
+    tesseract images/notice-skewed8-fixed.png stdout
+    tesseract images/notice-noisy2-fixed.png stdout
+    tesseract images/notice-lowres2-fixed.png stdout
+
+Chapter 6 — segmentation and orientation
+    tesseract images/columns.png stdout            (default, --psm 3)
+    tesseract images/columns.png stdout --psm 6    (interleaved: the trap)
+    tesseract images/notice-upside-down.png stdout --psm 0   (report only)
+    tesseract images/notice-upside-down.png stdout --psm 1   (read upright)
+
+Chapter 7 — languages
+    tesseract images/letter-deu.png stdout -l eng
+    tesseract images/letter-deu.png stdout -l deu
+    tesseract images/letter-deu.png stdout -l eng+deu
+
+Chapter 8 — output formats (config names)
+    tesseract images/notice-clean.png out txt
+    tesseract images/notice-clean.png out tsv
+    tesseract images/notice-clean.png out hocr
+    tesseract images/notice-clean.png out pdf
+    pdftotext out.pdf - | head
+
+Chapter 9 — the doubtful words
+    awk -F'\t' '$11 < 60 && $12 != "" {print $12, "("$11")"}' page.tsv
+
+Chapter 10 — batch and pipes
+    for f in batch-demo/*.png; do tesseract "$f" "${f%.png}"; done
+    tesseract pages-list.txt combined
+    cat images/notice-clean.png | tesseract stdin stdout
+
+Every command above was run in the guide's lab; the transcripts
+are in ../tesseract-lab/transcripts/ and the accuracy ledger is
+t90-accuracy-ledger.txt there.

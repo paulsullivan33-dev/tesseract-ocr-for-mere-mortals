@@ -1,0 +1,42 @@
+Lab notes for Tesseract OCR for Mere Mortals
+=============================================
+
+Machine: small Linux sandbox (Ubuntu 24.04). Engine: Tesseract
+5.3.4 with Leptonica 1.82.0, from Ubuntu's tesseract-ocr
+5.3.4-1build5 packages. The sandbox's package manager was held
+by other work throughout, so the .deb files were unpacked into
+a scratch folder and the identical binary run from there;
+languages eng, deu, fra plus osd were added the same way.
+
+Fixtures: every page was generated programmatically (PIL) from
+invented texts — a community-hall cleanup notice, a bakery
+receipt, a two-column gardening article, a German reading-circle
+notice, a single line, a single word. Damaged variants were made
+from the clean notice: skew 3 and 8 degrees, speckle (mild and
+heavy, with blotches), pale ink (two levels, one blurred),
+uneven light (gradient and hard shadow), low resolution (about
+100 and about 70 dpi), no DPI metadata, upside down.
+make-images.py and make-images-hard.py are the generators;
+fix-images.py performs the repairs; measure.py computes the
+character error rate against the known truths.
+
+Headline measurements (character accuracy, whitespace-normalised):
+clean 100.0; skew 3deg 99.6, skew 8deg 38.0 -> deskew 100.0;
+speckle mild 96.9, heavy 83.8 -> median+threshold 93.2;
+pale ink 100.0 (both levels); uneven light 100.0, hard shadow
+97.9 -> normalise+threshold 95.8 (the fix lost); lowres ~100dpi
+99.6, ~70dpi 87.5 -> upscale 3x 99.2; no-DPI 100.0 ("Estimating
+resolution as 402"); upside down 14.7 -> --psm 1 100.0; German
+notice under eng 99.2 (the umlaut), under deu 100.0, under
+eng+deu 99.2. Receipt measured 73.6 but a diff showed the only
+differences were two dashed rules — every word and figure right.
+
+Surprises worth the reader's trust: the engine is much tougher
+on contrast problems than folklore says, much weaker on tilt
+past a few degrees; --psm 8 failed on the lab's single word
+twice while the default read it; and a searchable PDF's text
+layer, pulled back with pdftotext, measured 98.1 against the
+plain text's 100.0 — the difference is the extractor's word
+order, not the OCR's reading.
+
+Full numbers: ../tesseract-lab/transcripts/t90-accuracy-ledger.txt

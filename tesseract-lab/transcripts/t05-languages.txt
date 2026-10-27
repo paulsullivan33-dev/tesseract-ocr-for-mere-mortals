@@ -1,0 +1,42 @@
+=== letter-deu.png with -l eng ===
+GEMEINDEHAUS AHORNSTRASSE
+
+Der Lesekreis trifft sich jeden Dienstag
+um 19 Uhr im kleinen Saal. Im November
+lesen wir kurze Geschichten und sprechen
+
+dariiber bei Tee und Keksen.
+
+Neue Leserinnen und Leser sind herzlich
+
+willkommen. Die Teilnahme ist kostenlos.
+truth 255 chars | ocr 256 chars | edits 2 | CER 0.008 | accuracy 99.2%
+
+=== letter-deu.png with -l deu ===
+GEMEINDEHAUS AHORNSTRASSE
+
+Der Lesekreis trifft sich jeden Dienstag
+um 19 Uhr im kleinen Saal. Im November
+lesen wir kurze Geschichten und sprechen
+
+darüber bei Tee und Keksen.
+
+Neue Leserinnen und Leser sind herzlich
+
+willkommen. Die Teilnahme ist kostenlos.
+truth 255 chars | ocr 255 chars | edits 0 | CER 0.000 | accuracy 100.0%
+
+=== letter-deu.png with -l eng+deu ===
+GEMEINDEHAUS AHORNSTRASSE
+
+Der Lesekreis trifft sich jeden Dienstag
+um 19 Uhr im kleinen Saal. Im November
+lesen wir kurze Geschichten und sprechen
+
+dariiber bei Tee und Keksen.
+
+Neue Leserinnen und Leser sind herzlich
+
+willkommen. Die Teilnahme ist kostenlos.
+truth 255 chars | ocr 256 chars | edits 2 | CER 0.008 | accuracy 99.2%
+

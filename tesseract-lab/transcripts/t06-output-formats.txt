@@ -1,0 +1,33 @@
+$ ls -la results/ (formats from one page)
+13522 results/notice-clean-hocr.hocr
+144284 results/notice-clean-pdf.pdf
+5075 results/notice-clean-tsv.tsv
+527 results/notice-clean.txt
+
+$ head -3 results/notice-clean-tsv.tsv
+level	page_num	block_num	par_num	line_num	word_num	left	top	width	height	conf	text
+1	1	0	0	0	0	0	0	2200	2800	-1	
+2	1	1	0	0	0	226	208	1495	63	-1	
+
+$ head -12 results/notice-clean-hocr.hocr
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+ <head>
+  <title></title>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+  <meta name='ocr-system' content='tesseract 5.3.4' />
+  <meta name='ocr-capabilities' content='ocr_page ocr_carea ocr_par ocr_line ocrx_word ocrp_wconf'/>
+ </head>
+ <body>
+  <div class='ocr_page' id='page_1' title='image "images/notice-clean.png"; bbox 0 0 2200 2800; ppageno 0; scan_res 300 300'>
+
+$ pdftotext results/notice-clean-pdf.pdf - | head -4
+MAPLE STREET COMMUNITY
+Spring Cleanup Day
+Saturday, April 18, from 9 in the morning
+until noon. Volunteers will sweep the hall,
+
+$ python3 measure.py (text layer of the PDF vs truth)
+truth 518 chars | ocr 518 chars | edits 10 | CER 0.019 | accuracy 98.1%

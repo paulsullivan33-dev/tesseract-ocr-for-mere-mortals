@@ -1,0 +1,29 @@
+site_name: Tesseract OCR for Mere Mortals
+site_description: Turning pictures of pages into text you can search, copy and keep. Reading a notice, a receipt or a whole folder of scans with a free OCR engine, fixing the pages it struggles with, checking what it got wrong, and knowing where its limits are.
+site_url: https://paulsullivan33-dev.github.io/tesseract-ocr-for-mere-mortals/
+copyright: 'Part of <a href="https://paulsullivan33-dev.github.io/mere-mortals/">For Mere Mortals</a> · Text <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>, code MIT'
+
+# Guides live at the repo root (nice for GitHub browsing).
+# The deploy workflow copies them into docs/ before building.
+theme:
+  name: material
+
+nav:
+  - Home: index.md
+  - What Tesseract OCR Is: what-tesseract-ocr-is.md
+  - The Moving Parts: the-moving-parts.md
+  - Installing Tesseract: installing-tesseract.md
+  - Your First OCR: your-first-ocr.md
+  - Getting a Clean Image: getting-a-clean-image.md
+  - Page Segmentation Modes: page-segmentation-modes.md
+  - Languages and Traineddata: languages-and-traineddata.md
+  - Output Formats: output-formats.md
+  - Confidence and Checking the Result: confidence-and-checking.md
+  - Batch Work on Folders: batch-work.md
+  - OCR in a Pipeline: ocr-in-a-pipeline.md
+  - Recipes: recipes.md
+  - The Neighbours: the-neighbours.md
+  - Limits: limits.md
+  - Troubleshooting: troubleshooting.md
+  - Glossary: glossary.md
+  - Writing Criteria: criteria.md

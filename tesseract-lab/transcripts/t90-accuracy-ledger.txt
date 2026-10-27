@@ -1,0 +1,25 @@
+$ the accuracy ledger: every lab page, measured the same way
+
+results/notice-clean.txt     truth 518 chars | ocr 518 chars | edits 0 | CER 0.000 | accuracy 100.0%
+results/notice-skewed-raw.txt truth 518 chars | ocr 517 chars | edits 2 | CER 0.004 | accuracy 99.6%
+results/notice-skewed8-raw.txt truth 518 chars | ocr 412 chars | edits 321 | CER 0.620 | accuracy 38.0%
+results/notice-skewed8-fixed.txt truth 518 chars | ocr 518 chars | edits 0 | CER 0.000 | accuracy 100.0%
+results/notice-noisy-raw.txt truth 518 chars | ocr 533 chars | edits 16 | CER 0.031 | accuracy 96.9%
+results/notice-noisy2-raw.txt truth 518 chars | ocr 590 chars | edits 84 | CER 0.162 | accuracy 83.8%
+results/notice-noisy2-fixed.txt truth 518 chars | ocr 542 chars | edits 35 | CER 0.068 | accuracy 93.2%
+results/notice-faint-raw.txt truth 518 chars | ocr 518 chars | edits 0 | CER 0.000 | accuracy 100.0%
+results/notice-faint2-raw.txt truth 518 chars | ocr 518 chars | edits 0 | CER 0.000 | accuracy 100.0%
+results/notice-uneven-raw.txt truth 518 chars | ocr 518 chars | edits 0 | CER 0.000 | accuracy 100.0%
+results/notice-shadow-raw.txt truth 518 chars | ocr 507 chars | edits 11 | CER 0.021 | accuracy 97.9%
+results/notice-shadow-fixed.txt truth 518 chars | ocr 518 chars | edits 22 | CER 0.042 | accuracy 95.8%
+results/notice-lowres-raw.txt truth 518 chars | ocr 519 chars | edits 2 | CER 0.004 | accuracy 99.6%
+results/notice-lowres2-raw.txt truth 518 chars | ocr 474 chars | edits 65 | CER 0.125 | accuracy 87.5%
+results/notice-lowres2-fixed.txt truth 518 chars | ocr 517 chars | edits 4 | CER 0.008 | accuracy 99.2%
+results/notice-nodpi-raw.txt truth 518 chars | ocr 518 chars | edits 0 | CER 0.000 | accuracy 100.0%
+results/upside-psm3.txt      truth 518 chars | ocr 510 chars | edits 442 | CER 0.853 | accuracy 14.7%
+results/upside-psm1.txt      truth 518 chars | ocr 518 chars | edits 0 | CER 0.000 | accuracy 100.0%
+results/letter-deu-deu.txt   truth 255 chars | ocr 255 chars | edits 0 | CER 0.000 | accuracy 100.0%
+batch-demo/receipt.txt       truth 235 chars | ocr 173 chars | edits 62 | CER 0.264 | accuracy 73.6%
+
+Receipt note: a character diff shows the only differences are the two
+dashed separator rules (62 characters). Every word and figure matches.

@@ -1,0 +1,2 @@
+images/one-line.png
+images/receipt.png

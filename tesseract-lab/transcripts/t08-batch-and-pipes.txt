@@ -1,0 +1,41 @@
+$ for f in batch-demo/*.png; do tesseract "$f" "${f%.png}"; done
+columns.png
+columns.txt
+notice-clean.png
+notice-clean.txt
+receipt.png
+receipt.txt
+
+$ cat batch-demo/receipt.txt
+CORNER BAKERY
+
+14 Willow Lane
+
+2 Sourdough loaf 7.50
+1 Butter croissant 3.25
+3 Cheese roll 5.40
+1 Orange juice 2.95
+TOTAL 19.10
+Cash 20.00
+Change 0.90
+
+Thank you. See you soon.
+$ python3 measure.py images/receipt.txt batch-demo/receipt.txt
+truth 235 chars | ocr 173 chars | edits 62 | CER 0.264 | accuracy 73.6%
+
+$ cat images/notice-clean.png | tesseract stdin stdout | head -3
+MAPLE STREET COMMUNITY HALL
+
+Spring Cleanup Day
+
+$ tesseract images/columns.png stdout --psm 6 | head -3 (wrong order, on purpose)
+Planting Tomatoes Move the young plants out
+only when the nights stay
+
+
+$ printf two image paths into pages-list.txt, then: tesseract pages-list.txt results/from-list
+Page 0 : images/one-line.png
+Page 1 : images/receipt.png  (both read into one output)
+The meeting starts at seven in the hall.
+CORNER BAKERY
+

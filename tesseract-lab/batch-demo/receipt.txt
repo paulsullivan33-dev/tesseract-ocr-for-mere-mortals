@@ -1,0 +1,13 @@
+CORNER BAKERY
+
+14 Willow Lane
+
+2 Sourdough loaf 7.50
+1 Butter croissant 3.25
+3 Cheese roll 5.40
+1 Orange juice 2.95
+TOTAL 19.10
+Cash 20.00
+Change 0.90
+
+Thank you. See you soon.

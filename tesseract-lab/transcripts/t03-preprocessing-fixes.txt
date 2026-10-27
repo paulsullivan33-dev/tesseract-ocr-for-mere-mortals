@@ -1,0 +1,8 @@
+=== notice-skewed8-fixed.png ===
+truth 518 chars | ocr 518 chars | edits 0 | CER 0.000 | accuracy 100.0%
+=== notice-noisy2-fixed.png ===
+truth 518 chars | ocr 542 chars | edits 35 | CER 0.068 | accuracy 93.2%
+=== notice-lowres2-fixed.png ===
+truth 518 chars | ocr 517 chars | edits 4 | CER 0.008 | accuracy 99.2%
+=== notice-shadow-fixed.png (background normalisation + threshold) ===
+truth 518 chars | ocr 518 chars | edits 22 | CER 0.042 | accuracy 95.8%
